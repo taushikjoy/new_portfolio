@@ -10,7 +10,7 @@ import { useInView } from "react-intersection-observer";
 
 function ContactUs() {
   const controls = useAnimation();
-  const [element, view] = useInView({ threshold: 0.5 });
+  const [element, view] = useInView({ threshold: 0.6 });
   if (view) {
     controls.start("show");
   }
@@ -22,6 +22,7 @@ function ContactUs() {
       initial='hidden'
       animate={controls}
     >
+      <h2>Contact me</h2>
       <div className='innerdiv'>
         <motion.div
           variants={contactanimeTwo}
@@ -65,11 +66,12 @@ export default ContactUs;
 
 const ContactusStyle = styled(motion.div)`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+
   .innerdiv {
     display: flex;
-
     height: 80%;
     gap: 1px;
     width: 70%;

@@ -8,24 +8,25 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
-    button {
+    /* button {
         font-weight: bold;
         font-size: 1.1.rem;
         cursor: pointer;
         padding: 1rem 2rem;
         border: 1px solid #525252;
         border-radius: 0.5rem;
-        color: black;
+        color: white;
         transition: all 0.5s ease;
         background: transparent;
         &:hover{
-            color: white;
-            background: #525252;
+            color: #525252;
+            background: white;
         }
     }
     h2{
         font-weight: lighter;
         font-size: 4rem;
+        
     }
     h3{
         color: white;
@@ -50,6 +51,6 @@ export const GlobalStyle = createGlobalStyle`
     } */
     ul {
         list-style: none;
-    }
+    } */
  
 `;

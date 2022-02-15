@@ -84,15 +84,14 @@ export const slider = {
 
 export const fade = {
   hidden: {
-    opacity: 0,
+    opacity: 1,
   },
 
   show: {
     opacity: 1,
     transition: {
       duration: 1,
-
-      staggerChildren: 0.25,
+      staggerChildren: 0.5,
     },
   },
 };
@@ -100,28 +99,32 @@ export const fade = {
 export const contactanimeOne = {
   hidden: {
     opacity: 1,
-    y: -1000,
+    x: -2000,
+    // y: 2000,
   },
 
   show: {
     opacity: 1,
-    y: 0,
+    x: 0,
+    // y: 0,
 
     transition: {
-      duration: 0.5,
+      duration: 1,
     },
   },
 };
 export const contactanimeTwo = {
   hidden: {
-    y: 1000,
+    x: 2000,
+    // y: -2000,
   },
 
   show: {
-    y: 0,
+    x: 0,
+    // y: 0,
 
     transition: {
-      duration: 0.5,
+      duration: 1,
     },
     // backgroundColor: ["#555555"],
   },

@@ -5,9 +5,10 @@ import Navbar from "./components/sections/Navbar";
 /*  {<AnimatePresence exitBeforeEnter>
       </AnimatePresence> }*/
 
-import Services from "./components/sections/Services";
+// import Services from "./components/sections/Services";
 import "./app.scss";
 import ContactUs from "./components/sections/ContactUs";
+import Skills from "./components/sections/Skills";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
 
       <div className='sections'>
         <About />
-        <Services />
+        <Skills />
+        {/* <Services /> */}
         <ContactUs />
       </div>
     </div>

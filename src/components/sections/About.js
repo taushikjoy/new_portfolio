@@ -58,7 +58,8 @@ const AboutStyle = styled(motion.div)`
   align-items: center;
   justify-content: space-between;
   padding: 5rem 10rem;
-  color: black;
+  color: white;
+  background: black;
   margin-top: 0rem;
 `;
 
