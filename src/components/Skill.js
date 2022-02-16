@@ -6,9 +6,11 @@ import { motion } from "framer-motion";
 const skillhover = {
   hidden: {
     y: 0,
+    x: -5,
   },
   show: {
-    y: 15,
+    y: 10,
+    x: 0,
     transition: {
       yoyo: Infinity,
     },
@@ -25,10 +27,10 @@ function Skill({ color, logo }) {
   // }
   const SkilloneStyle = styled(motion.div)`
     .card {
-      width: 10rem;
-      height: 15rem;
-      background-color: #333;
-      border-top-right-radius: 10px;
+      width: 8rem;
+      height: 12rem;
+      background-color: #111;
+      border-radius: 10px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -57,7 +59,8 @@ function Skill({ color, logo }) {
     }
 
     .card:hover .circle {
-      border-color: #ffeeba;
+      //that need work //
+      /* border-color: ; */
       background: #ffd861;
     }
 
@@ -65,27 +68,15 @@ function Skill({ color, logo }) {
       background: #f7e3cb;
     }
 
-    /* .card:hover p {
-      color: #4c5656;
-    } */
-
     .card:active {
       transform: scale(2) translateZ(0);
       box-shadow: 0 15px 24px rgba(0, 0, 0, 0.11),
         0 15px 24px rgba(255, 215, 97, 0.48);
     }
 
-    /* .card p {
-      font-size: 17px;
-      color: #4c5656;
-      margin-top: 30px;
-      z-index: 1000;
-      transition: color 0.3s ease-out;
-    } */
-
     .circle {
-      width: 131px;
-      height: 131px;
+      width: 6rem;
+      height: 6rem;
       border-radius: 50%;
       background: #fff;
       border: 2px solid ${color};
@@ -99,41 +90,41 @@ function Skill({ color, logo }) {
 
     .circle:after {
       content: "";
-      width: 118px;
-      height: 118px;
+      width: 6.4rem;
+      height: 6.4rem;
       display: block;
       position: absolute;
       background: #fff;
       border-radius: 50%;
-      top: 5px;
-      left: 5px;
+      top: -1px;
+      left: -3px;
       transition: opacity 0.3s ease-out;
     }
 
     .circle img {
       z-index: 10000;
+      margin-top: 0.5rem;
       transform: translateZ(0);
-      height: 4rem;
+      height: 3.9rem;
     }
 
     .overlay {
-      width: 118px;
+      width: 6.8rem;
+      height: 6.8rem;
       position: absolute;
-      height: 118px;
       border-radius: 50%;
       background-color: ${color};
-      top: 55px;
-      left: 22px;
+      top: 46px;
+      left: 12px;
       z-index: 0;
       transition: transform 1s ease-out;
     }
   `;
   return (
     <SkilloneStyle
-
-    //  variants={skillhover}
-    // initial='hidden'
-    // animate='show'
+      variants={skillhover}
+      // initial='hidden'
+      //  animate='show'
     >
       <a
         href='#'

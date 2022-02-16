@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Skill from "../Skill";
+
+import { fade } from "../../Styles/Pageanimation";
+import { motion } from "framer-motion";
 import sasslogo from "../../img/SASSSVG.svg";
 import htmllogo from "../../img/HTMLSVG.svg";
 import csslogo from "../../img/CSSSVG.svg";
@@ -20,14 +23,19 @@ function Skills() {
     <SkillsStyle>
       <h1> My Skills </h1>
 
-      <div className='skillsdiv'>
+      <motion.div
+        className='skillsdiv'
+        variants={fade}
+        animate='show'
+        initial='hidden'
+      >
         <Skill logo={htmllogo} color={htmlcolor1} />
         <Skill logo={csslogo} color={csscolor1} />
         <Skill logo={jslogo} color={jscolor1} />
         <Skill logo={reactlogo} color={reactcolor1} />
         <Skill logo={nodelogo} color={nodecolor1} />
         <Skill logo={sasslogo} color={sasscolor1} />
-      </div>
+      </motion.div>
     </SkillsStyle>
   );
 }
@@ -38,9 +46,14 @@ const SkillsStyle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #222;
+  background: #111;
   .skillsdiv {
-    display: flex;
-    gap: 1rem;
+    height: 70vh;
+    width: 70%;
+
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }
 `;

@@ -91,7 +91,8 @@ export const fade = {
     opacity: 1,
     transition: {
       duration: 1,
-      staggerChildren: 0.5,
+      when: "beforeChildren",
+      staggerChildren: 0.75,
     },
   },
 };
