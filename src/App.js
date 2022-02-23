@@ -9,6 +9,7 @@ import Navbar from "./components/sections/Navbar";
 import "./app.scss";
 import ContactUs from "./components/sections/ContactUs";
 import Skills from "./components/sections/Skills";
+import Projects from "./components/sections/Projects";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <About />
         <Skills />
         {/* <Services /> */}
+        <Projects />
         <ContactUs />
       </div>
     </div>

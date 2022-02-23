@@ -5,16 +5,7 @@ import ServiceCard from "../ServiceCard";
 function Services() {
   return (
     <ServicesStyle>
-      <div>
-        <h1>What Services I provide</h1>
-        <div>
-          <button>dd</button>
-          <button>ee</button>
-        </div>
-        <div className='singleservice'>
-          <ServiceCard />
-        </div>
-      </div>
+      <div></div>
     </ServicesStyle>
   );
 }

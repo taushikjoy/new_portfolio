@@ -69,12 +69,14 @@ const ContactusStyle = styled(motion.div)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: #1c1d25;
 
   .innerdiv {
     display: flex;
     height: 80%;
     gap: 1px;
     width: 70%;
+    box-shadow: 0 20px 80px 0 rgb(0 0 0 / 55%);
 
     .aboutme {
       background-color: #f5f0e4;
@@ -83,8 +85,9 @@ const ContactusStyle = styled(motion.div)`
 
     .contactfrom {
       flex: 1;
+      color: white;
 
-      background-color: brown;
+      background-color: rgba(28, 29, 37, 0.985);
       padding: 6rem 3rem;
 
       .the-form {

@@ -10,6 +10,8 @@ import csslogo from "../../img/CSSSVG.svg";
 import nodelogo from "../../img/NODESVG.svg";
 import reactlogo from "../../img/REACTSVG.svg";
 import jslogo from "../../img/JSSVG.svg";
+import officelogo from "../../img/Office.svg";
+import databaselogo from "../../img/Database.svg";
 
 function Skills() {
   const htmlcolor1 = "#e34c26";
@@ -18,6 +20,8 @@ function Skills() {
   const jscolor1 = "#F0DB4F";
   const nodecolor1 = "#68A063";
   const sasscolor1 = "#cd6799";
+  const officecolor1 = "#DC3E15";
+  const databasecolor1 = "#4db33d";
 
   return (
     <SkillsStyle>
@@ -35,6 +39,8 @@ function Skills() {
         <Skill logo={reactlogo} color={reactcolor1} />
         <Skill logo={nodelogo} color={nodecolor1} />
         <Skill logo={sasslogo} color={sasscolor1} />
+        <Skill logo={officelogo} color={officecolor1} />
+        <Skill logo={databaselogo} color={databasecolor1} />
       </motion.div>
     </SkillsStyle>
   );
@@ -46,7 +52,7 @@ const SkillsStyle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #111;
+  background: #1c1d20;
   .skillsdiv {
     height: 70vh;
     width: 70%;

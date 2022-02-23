@@ -29,7 +29,7 @@ function Skill({ color, logo }) {
     .card {
       width: 8rem;
       height: 12rem;
-      background-color: #111;
+      background-color: #1c1d20;
       border-radius: 10px;
       overflow: hidden;
       display: flex;
@@ -69,7 +69,8 @@ function Skill({ color, logo }) {
     }
 
     .card:active {
-      transform: scale(2) translateZ(0);
+      transform: scale(1.4) translateZ(0);
+
       box-shadow: 0 15px 24px rgba(0, 0, 0, 0.11),
         0 15px 24px rgba(255, 215, 97, 0.48);
     }
@@ -115,7 +116,7 @@ function Skill({ color, logo }) {
       border-radius: 50%;
       background-color: ${color};
       top: 46px;
-      left: 12px;
+      left: 0.73rem;
       z-index: 0;
       transition: transform 1s ease-out;
     }
@@ -181,3 +182,11 @@ export default Skill;
     }
   } 
   */
+
+// function changeBackgroundon(e) {
+//   e.target.style.background = color;
+//   // e.target.style.transform = "scale(4) translateZ(0)";
+// }
+// function changeBackgroundout(e) {
+//   e.target.style.background = "#333";
+// }
