@@ -1,11 +1,11 @@
 .sections {
   position: relative;
   top: 70px;
-  scroll-snap-type: y mandatory;
+  // scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: calc(100vh - 70px);
   > * {
     height: calc(100vh - 70px);
-    scroll-snap-align: start;
+    // scroll-snap-align: start;
   }
 }

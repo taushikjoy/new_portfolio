@@ -76,17 +76,18 @@ const ProjectCardStyle = styled.div`
         content: "";
         position: absolute;
         top: 0;
-        left: -50%;
+        left: -60%;
         width: 50%;
         height: 100%;
         background: linear-gradient(270deg, #235aa6, #101b3b);
+        transform: skewX(-15deg);
         z-index: 10;
         /* transform: translateX(0%); */
         /* transition: transform 0.5s ease; */
       }
       &:hover {
         :after {
-          transform: translateX(300%);
+          transform: translateX(350%);
           transition: transform 0.4s ease-out;
         }
       }

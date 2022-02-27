@@ -90,7 +90,7 @@ export const fade = {
   show: {
     opacity: 1,
     transition: {
-      duration: 0.5,
+      duration: 1,
       when: "beforeChildren",
       staggerChildren: 0.5,
     },
@@ -128,5 +128,70 @@ export const contactanimeTwo = {
       duration: 0.5,
     },
     // backgroundColor: ["#555555"],
+  },
+};
+
+//project detail animations
+
+export const fadedetail = {
+  hidden: {
+    opacity: 0,
+  },
+
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 2,
+      // when: "beforeChildren",
+      // staggerChildren: 0.5,
+    },
+  },
+};
+
+export const projectimageone = {
+  hidden: {
+    x: -2000,
+    opacity: 0,
+  },
+
+  show: {
+    x: 0,
+    opacity: 1,
+
+    transition: {
+      duration: 2.5,
+    },
+    // backgroundColor: ["#555555"],
+  },
+};
+
+export const projectimagetwo = {
+  hidden: {
+    y: 2000,
+    opacity: 0,
+  },
+
+  show: {
+    y: 0,
+    opacity: 1,
+
+    transition: {
+      duration: 2.75,
+    },
+  },
+};
+export const projectimagethree = {
+  hidden: {
+    y: -2000,
+    opacity: 0,
+  },
+
+  show: {
+    y: 0,
+    opacity: 1,
+
+    transition: {
+      duration: 1.75,
+    },
   },
 };
