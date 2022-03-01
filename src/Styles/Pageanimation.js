@@ -2,20 +2,17 @@ export const pageAnimation = {
   hidden: {
     opacity: 0,
     y: 300,
-    // backgroundColor: ["hsl(0, 0%, 100%)", "hsl(0, 0%, 100%)"],
   },
 
   show: {
     opacity: 1,
     y: 0,
-    // backgroundColor: ["hsl(55, 100%, 0%)", "hsl(55, 100%, 0%)"],
 
     transition: {
       duration: 1,
       when: "beforeChildren",
       staggerChildren: 0.5,
     },
-    // backgroundColor: ["#555555"],
   },
   exit: {
     opacity: 0,
@@ -30,18 +27,15 @@ export const titleAnime = {
   hidden: {
     opacity: 0,
     y: 200,
-    // backgroundColor: ["hsl(0, 0%, 100%)", "hsl(0, 0%, 100%)"],
   },
 
   show: {
     opacity: 1,
     y: 0,
-    // backgroundColor: ["hsl(55, 100%, 0%)", "hsl(55, 100%, 0%)"],
 
     transition: {
       duration: 0.4,
     },
-    // backgroundColor: ["#555555"],
   },
 };
 
@@ -127,11 +121,8 @@ export const contactanimeTwo = {
     transition: {
       duration: 0.5,
     },
-    // backgroundColor: ["#555555"],
   },
 };
-
-//project detail animations
 
 export const fadedetail = {
   hidden: {
@@ -161,7 +152,6 @@ export const projectimageone = {
     transition: {
       duration: 2.5,
     },
-    // backgroundColor: ["#555555"],
   },
 };
 

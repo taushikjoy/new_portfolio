@@ -2,6 +2,9 @@ import React from "react";
 import ProjectCard from "../UI/ProjectCard";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import projectCover1 from "../../img/capture.jpg";
+import projectCover2 from "../../img/musiccover.jpg";
+import projectone3 from "../../img/projectone3.jpg";
 
 function Projects() {
   return (
@@ -9,12 +12,14 @@ function Projects() {
       <h1>Latest Works</h1>
       <div className='cards'>
         <div className='abcd abcd1'>
-          <Link to='project/1234'>
-            <ProjectCard />
+          <Link to='/project/capture'>
+            <ProjectCard coverPhoto={projectCover1} />
           </Link>
         </div>
         <div className='abcd abcd2'>
-          <ProjectCard />
+          <Link to='/project/racer'>
+            <ProjectCard coverPhoto={projectCover2} />
+          </Link>
         </div>
         <div className='abcd abcd3'>
           <ProjectCard />
@@ -30,7 +35,7 @@ function Projects() {
 export default Projects;
 
 const ProjectsStyle = styled.div`
-  background: #f7f7f7;
+  background: #151d27;
   height: auto;
   width: 100vw;
   display: flex;

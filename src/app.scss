@@ -4,6 +4,7 @@
   // scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: calc(100vh - 70px);
+  overflow-x: hidden;
   > * {
     height: calc(100vh - 70px);
     // scroll-snap-align: start;

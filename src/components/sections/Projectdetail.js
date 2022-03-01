@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import projectimage1 from "../../img/omnifood.jpg";
-import projectimage2 from "../../img/guess.jpg";
-import projectimage3 from "../../img/music.jpg";
+//
+import { useLocation } from "react-router-dom";
+import { ProjectState } from "../../ProjectState";
+
+//
+// import projectimage1 from "../../img/omnifood.jpg";
+// import projectimage2 from "../../img/guess.jpg";
+// import projectimage3 from "../../img/music.jpg";
 import github from "../../img/github.png";
 import live from "../../img/live.png";
 import { motion } from "framer-motion";
+
 import {
   fadedetail,
   projectimageone,
@@ -14,56 +20,79 @@ import {
 } from "../../Styles/Pageanimation";
 
 function Projectdetail() {
-  return (
-    <ProjectDetailStyle>
-      <h1>Demo title</h1>
-      <motion.div
-        variants={fadedetail}
-        initial='hidden'
-        animate='show'
-        className='container'
-      >
-        <div className='detail'>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-            dignissimos dolor illo, tenetur porro sapiente sit dolore excepturi
-            nisi quis maxime totam sequi accusamus velit tempore at nobis!
-            Molestias, repellat? Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Officiis quod, perferendis obcaecati natus,
-            debitis quidem necessitatibus culpa porro hic soluta consequuntur
-            tempora, expedita tenetur aspernatur deleniti ducimus facere
-            perspiciatis quisquam?
-          </p>
-          <div className='tools'>
-            <a href='#'>Javascript</a>
-            <a href='#'>..bb</a>
-            <a href='#'>...cc</a>
-            <a href='#'>...dd</a>
-            <a href='#'>...ee</a>
-          </div>
+  //
 
-          <div className='livelink'>
-            <button className='btn1'>
-              <img src={github} alt='' />
-            </button>
-            <button className='btn2'>
-              <img src={live} alt='' />
-            </button>
-          </div>
-        </div>
-        <div className='images'>
-          <motion.div variants={projectimageone} className='image1'>
-            <img src={projectimage1} alt='' />
+  //
+  //
+
+  const location = useLocation();
+  const url = location.pathname;
+  console.log(url);
+  const [projects, setProjects] = useState(ProjectState);
+  const [project, setProject] = useState(null);
+
+  useEffect(() => {
+    const currentProject = projects.filter(
+      (stateProject) => stateProject.url === url
+    );
+    setProject(currentProject[0]);
+  }, [projects, url, project]);
+
+  //
+  return (
+    <>
+      {project && (
+        <ProjectDetailStyle>
+          <h1>{project.title}</h1>
+          <motion.div
+            variants={fadedetail}
+            initial='hidden'
+            animate='show'
+            className='container'
+          >
+            <div className='detail'>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat dignissimos dolor illo, tenetur porro sapiente sit
+                dolore excepturi nisi quis maxime totam sequi accusamus velit
+                tempore at nobis! Molestias, repellat? Lorem ipsum dolor sit
+                amet consectetur adipisicing elit. Officiis quod, perferendis
+                obcaecati natus, debitis quidem necessitatibus culpa porro hic
+                soluta consequuntur tempora, expedita tenetur aspernatur
+                deleniti ducimus facere perspiciatis quisquam?
+              </p>
+              <div className='tools'>
+                <a href='#'>Javascript</a>
+                <a href='#'>..bb</a>
+                <a href='#'>...cc</a>
+                <a href='#'>...dd</a>
+                <a href='#'>...ee</a>
+              </div>
+
+              <div className='livelink'>
+                <a href={project.githubRepo} className='btn1'>
+                  <img src={github} alt='' />
+                </a>
+                <a href={project.liveLink} className='btn2'>
+                  <img src={live} alt='' />
+                </a>
+              </div>
+            </div>
+            <div className='images'>
+              <motion.div variants={projectimageone} className='image1 image'>
+                <img src={project.fisrtImage} alt='' />
+              </motion.div>
+              <motion.div variants={projectimagetwo} className='image2 image'>
+                <img src={project.secondImage} alt='' />
+              </motion.div>
+              <motion.div variants={projectimagethree} className='image3 image'>
+                <img src={project.thirddImage} alt='' />
+              </motion.div>
+            </div>
           </motion.div>
-          <motion.div variants={projectimagetwo} className='image2'>
-            <img src={projectimage2} alt='' />
-          </motion.div>
-          <motion.div variants={projectimagethree} className='image3'>
-            <img src={projectimage3} alt='' />
-          </motion.div>
-        </div>
-      </motion.div>
-    </ProjectDetailStyle>
+        </ProjectDetailStyle>
+      )}
+    </>
   );
 }
 
@@ -165,6 +194,12 @@ const ProjectDetailStyle = styled.div`
       grid-template-columns: repeat(16, 1fr);
       grid-template-rows: repeat(12, 1fr);
 
+      .image {
+        img {
+          object-fit: cover;
+        }
+      }
+
       .image1 {
         grid-column: 1/8;
         grid-row: 4/8;
@@ -187,7 +222,7 @@ const ProjectDetailStyle = styled.div`
         grid-column: 9/15;
         grid-row: 2/9;
         img {
-          width: 20rem;
+          width: 22rem;
           height: 25rem;
         }
       }

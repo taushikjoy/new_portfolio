@@ -29,7 +29,7 @@ function Skill({ color, logo }) {
     .card {
       width: 8rem;
       height: 12rem;
-      background-color: #1c1d20;
+      background-color: #0f141d;
       border-radius: 10px;
       overflow: hidden;
       display: flex;

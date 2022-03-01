@@ -52,7 +52,11 @@ const SkillsStyle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #1c1d20;
+  background: #0f141d;
+  h1 {
+    margin-top: 3rem;
+    color: white;
+  }
   .skillsdiv {
     height: 70vh;
     width: 70%;
