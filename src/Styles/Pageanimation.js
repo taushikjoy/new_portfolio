@@ -84,7 +84,7 @@ export const fade = {
   show: {
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 0.5,
       when: "beforeChildren",
       staggerChildren: 0.5,
     },
@@ -105,6 +105,7 @@ export const contactanimeOne = {
 
     transition: {
       duration: 0.5,
+      ease: "easeOut",
     },
   },
 };
@@ -120,6 +121,7 @@ export const contactanimeTwo = {
 
     transition: {
       duration: 0.5,
+      ease: "easeOut",
     },
   },
 };
@@ -182,6 +184,78 @@ export const projectimagethree = {
 
     transition: {
       duration: 1.75,
+    },
+  },
+};
+
+export const coverparent = {
+  hidden: {
+    opacity: 0,
+  },
+
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+      when: "beforeChildren",
+      staggerChildren: 1.5,
+    },
+  },
+};
+
+export const coverimageone = {
+  hidden: {
+    x: -1500,
+  },
+
+  show: {
+    x: 0,
+
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+export const coverimagetwo = {
+  hidden: {
+    x: 600,
+  },
+
+  show: {
+    x: 0,
+
+    transition: {
+      duration: 1,
+      ease: "easeOut",
+    },
+  },
+};
+export const coverimagethree = {
+  hidden: {
+    x: -1500,
+  },
+
+  show: {
+    x: 0,
+
+    transition: {
+      duration: 1,
+      ease: "easeOut",
+    },
+  },
+};
+export const coverimagefour = {
+  hidden: {
+    x: 600,
+  },
+
+  show: {
+    x: 0,
+
+    transition: {
+      duration: 1,
+      ease: "easeOut",
     },
   },
 };

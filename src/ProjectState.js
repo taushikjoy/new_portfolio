@@ -15,7 +15,7 @@ export const ProjectState = () => {
       secondImage: projectone2,
       thirddImage: projectone3,
       url: "/project/capture",
-      githubRepo: "https://github.com/taushikjoy/new_portfolio",
+      githubRepo: "https://github.com/taushikjoy/Capture-Portfolio",
       liveLink: "https://react-capture-portfolio-taushikjoy.netlify.app",
     },
     {

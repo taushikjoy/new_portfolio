@@ -1,10 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import joy from "../../img/dog.jpg";
+import cover1 from "../../img/cover1.png";
+import cover2 from "../../img/cover2.jpg";
+import cover3 from "../../img/cover3.jpg";
+import cover4 from "../../img/cover4.jpg";
 
 import { motion } from "framer-motion";
 import {
   titleAnime,
+  coverparent,
+  coverimageone,
+  coverimagetwo,
+  coverimagethree,
+  coverimagefour,
   fade,
   photoAnime,
   pageAnimation,
@@ -20,9 +29,26 @@ function About() {
         <div id='stars2'></div>
         <div id='stars3'></div>
         <div id='title'>
-          {/* <span>PURE CSS</span>
-          <br />
-          <span>PARALLAX PIXEL BACKGROUND</span> */}
+          <div className='descrip'>hjhbhb</div>
+          <motion.div
+            className='images'
+            variants={coverparent}
+            initial='hidden'
+            animate='show'
+          >
+            <motion.div className='image1' variants={coverimageone}>
+              <img src={cover1} alt='' />
+            </motion.div>
+            <motion.div className='image2' variants={coverimagetwo}>
+              <img src={cover2} alt='' />
+            </motion.div>
+            <motion.div className='image3' variants={coverimagethree}>
+              <img src={cover3} alt='' />
+            </motion.div>
+            <motion.div className='image4' variants={coverimagefour}>
+              <img src={cover4} alt='' />
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </AboutStyle>
@@ -34,9 +60,49 @@ export default About;
 const AboutStyle = styled.div`
   height: 100vh;
   overflow: hidden;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background: radial-gradient(ellipse at top, #233345 0%, #06070a 100%);
   #title {
-    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    width: 90%;
+    height: 80vh;
+
+    /* background: chocolate; */
+    margin: auto;
+
+    .descrip {
+      flex: 1;
+    }
+    .images {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(16, 1fr);
+      grid-template-rows: repeat(16, 1fr);
+      .image1 {
+        grid-column: 4/9;
+        grid-row: 2/8;
+      }
+      .image2 {
+        grid-column: 9/13;
+        grid-row: 6/10;
+      }
+      .image3 {
+        grid-column: 3/8;
+        grid-row: 9/14;
+      }
+      .image4 {
+        grid-column: 8/14;
+        grid-row: 13/16;
+      }
+
+      img {
+        width: 24rem;
+        height: 16.5rem;
+      }
+    }
+
+    /* position: absolute;
     top: 50%;
     left: 0;
     right: 0;
@@ -47,7 +113,7 @@ const AboutStyle = styled.div`
     font-size: 50px;
     letter-spacing: 10px;
     margin-top: -60px;
-    padding-left: 10px;
+    padding-left: 10px; */
   }
 
   #title span {
