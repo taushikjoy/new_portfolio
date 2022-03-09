@@ -107,6 +107,9 @@ const ProjectDetailStyle = styled.div`
   h1 {
     margin-top: 2rem;
     color: white;
+    @media (max-width: 720px) {
+      font-size: 30px;
+    }
   }
 
   .container {
@@ -117,7 +120,16 @@ const ProjectDetailStyle = styled.div`
     margin-top: 3rem;
     /* position: relative; */
 
+    @media (max-width: 720px) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
     .detail {
+      @media (max-width: 720px) {
+        padding: 0.5rem 0.5rem;
+        gap: 2rem;
+      }
       flex: 2;
 
       padding: 5rem 5rem;
@@ -144,6 +156,10 @@ const ProjectDetailStyle = styled.div`
         display: flex;
         justify-content: space-between;
         width: 70%;
+        @media (max-width: 720px) {
+          bottom: 7%;
+          width: 90%;
+        }
         .btn1 {
           border: none;
           outline: none;
@@ -193,6 +209,9 @@ const ProjectDetailStyle = styled.div`
       display: grid;
       grid-template-columns: repeat(16, 1fr);
       grid-template-rows: repeat(12, 1fr);
+      @media (max-width: 720px) {
+        padding-right: 0.5rem;
+      }
 
       .image {
         img {
@@ -208,6 +227,12 @@ const ProjectDetailStyle = styled.div`
           width: 32rem;
           height: 18rem;
         }
+        @media (max-width: 720px) {
+          img {
+            width: 15rem;
+            height: 12rem;
+          }
+        }
       }
       .image2 {
         grid-column: 7/14;
@@ -217,6 +242,12 @@ const ProjectDetailStyle = styled.div`
           width: 32rem;
           height: 18rem;
         }
+        @media (max-width: 720px) {
+          img {
+            width: 14rem;
+            height: 12rem;
+          }
+        }
       }
       .image3 {
         grid-column: 9/15;
@@ -224,6 +255,12 @@ const ProjectDetailStyle = styled.div`
         img {
           width: 22rem;
           height: 25rem;
+        }
+        @media (max-width: 720px) {
+          img {
+            width: 11rem;
+            height: 16rem;
+          }
         }
       }
 

@@ -19,16 +19,14 @@ import {
   pageAnimation,
 } from "../../Styles/Pageanimation";
 
-import Wave from "../Wave";
-
 function About() {
   return (
     <AboutStyle>
-      <section class='wrapper'>
+      <section className='wrapper'>
         <div id='stars'></div>
         <div id='stars2'></div>
         <div id='stars3'></div>
-        <div id='title'>
+        <div className='title'>
           <div className='descrip'>hjhbhb</div>
           <motion.div
             className='images'
@@ -58,18 +56,25 @@ function About() {
 export default About;
 
 const AboutStyle = styled.div`
+  @media (max-width: 720px) {
+    .title {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
   height: 100vh;
+  width: 100%;
   overflow: hidden;
   background: radial-gradient(ellipse at top, #233345 0%, #06070a 100%);
-  #title {
+  .title {
     display: flex;
     justify-content: space-between;
     color: white;
-    width: 90%;
-    height: 80vh;
+    width: 80%;
 
-    /* background: chocolate; */
-    margin: auto;
+    height: auto;
+    z-index: 100;
+    margin: 4rem auto;
 
     .descrip {
       flex: 1;
@@ -77,28 +82,37 @@ const AboutStyle = styled.div`
     .images {
       flex: 1;
       display: grid;
-      grid-template-columns: repeat(16, 1fr);
-      grid-template-rows: repeat(16, 1fr);
+      padding: 0.5rem;
+      width: 100%;
+      grid-template-columns: repeat(20, 1fr);
+      grid-template-rows: repeat(20, 1fr);
+      margin: auto;
+      @media (max-width: 720px) {
+        padding: 0rem;
+      }
       .image1 {
-        grid-column: 4/9;
-        grid-row: 2/8;
+        grid-column: 4/14;
+        grid-row: 2/7;
+        width: 100%;
       }
       .image2 {
-        grid-column: 9/13;
-        grid-row: 6/10;
+        grid-column: 11/20;
+        grid-row: 6/16;
+        width: 100%;
       }
       .image3 {
-        grid-column: 3/8;
+        grid-column: 3/12;
         grid-row: 9/14;
+        width: 100%;
       }
       .image4 {
-        grid-column: 8/14;
-        grid-row: 13/16;
+        grid-column: 10/20;
+        grid-row: 12/18;
+        width: 100%;
       }
 
       img {
-        width: 24rem;
-        height: 16.5rem;
+        width: 100%;
       }
     }
 
@@ -118,7 +132,7 @@ const AboutStyle = styled.div`
 
   #title span {
     background: -webkit-linear-gradient(white, #38495a);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 

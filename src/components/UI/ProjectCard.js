@@ -5,9 +5,21 @@ import { Link } from "react-router-dom";
 
 function ProjectCard({ coverPhoto }) {
   const ProjectCardStyle = styled.div`
-    width: 100%;
+    @media (max-width: 720px) {
+      height: 25vh;
+      width: 100%;
+      position: relative;
 
-    cursor: alias;
+      h1 {
+        font-size: 1rem;
+      }
+      p {
+        font-size: 0.8rem;
+      }
+    }
+
+    width: 100%;
+    cursor: pointer;
     background: url(${coverPhoto});
     background-position: center;
     background-repeat: no-repeat;
@@ -53,6 +65,15 @@ function ProjectCard({ coverPhoto }) {
       z-index: 4;
       transition: transform 1s ease;
       opacity: 0;
+
+      @media (max-width: 720px) {
+        position: absolute;
+        top: 2.2rem;
+        left: 1rem;
+
+        height: 20%;
+        width: 40%;
+      }
       button {
         width: 8rem;
         height: 3rem;
@@ -80,6 +101,11 @@ function ProjectCard({ coverPhoto }) {
             transform: translateX(350%);
             transition: transform 0.4s ease-out;
           }
+        }
+        @media (max-width: 720px) {
+          font-size: 0.6rem;
+          width: 3rem;
+          height: 2rem;
         }
       }
     }

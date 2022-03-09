@@ -28,7 +28,7 @@ function ContactUs() {
           <iframe
             src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1086.0911548708057!2d90.44108733732739!3d23.705956999023538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9d1d42e5fc5%3A0x9175e956246e70a2!2zMjPCsDQyJzIzLjMiTiA5MMKwMjYnMjcuNSJF!5e0!3m2!1sen!2sbd!4v1645686211954!5m2!1sen!2sbd'
             width='100%'
-            height='90%'
+            height='100%'
             style='border:0;'
             allowFullScreen=''
             style={{ border: 0 }}
@@ -64,14 +64,32 @@ function ContactUs() {
 export default ContactUs;
 
 const ContactusStyle = styled(motion.div)`
+  @media (max-width: 720px) {
+    padding: 0;
+    height: 100%;
+  }
+  
   display: flex;
+  gap: 0.5rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #222222;
   color: #faf7ff;
+  height: calc(100vh - 70px);
+  padding: 1rem 0rem 3rem 0rem;
+
+  h2 {
+    margin: 0.5rem 0.5rem;
+  }
 
   .innerdiv {
+    @media (max-width: 720px) {
+      width: 90%;
+
+      flex-direction: column-reverse;
+    }
+
     display: flex;
     height: 80%;
     gap: 1px;
@@ -82,14 +100,20 @@ const ContactusStyle = styled(motion.div)`
       background-color: #7f7e87;
       flex: 1;
       padding: 1rem;
+      @media (max-width: 720px) {
+      }
     }
 
     .contactfrom {
       flex: 1;
       color: white;
-
+      /* height: 100%; */
       background-color: #25232e;
       padding: 6rem 3rem;
+      @media (max-width: 720px) {
+        flex: 1;
+        padding: 3rem 1rem;
+      }
 
       .the-form {
         display: flex;

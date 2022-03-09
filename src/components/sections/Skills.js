@@ -70,12 +70,23 @@ const SkillsStyle = styled.div`
     color: white;
   }
   .skillsdiv {
-    height: 70vh;
+    height: 95vh;
     width: 70%;
 
     display: grid;
     place-items: center;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
+  }
+  @media (max-width: 720px) {
+    .skillsdiv {
+      height: 95vh;
+      width: 70%;
+
+      display: grid;
+      place-items: center;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+    }
   }
 `;

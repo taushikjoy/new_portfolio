@@ -2,20 +2,7 @@ import React from "react";
 // import sasslogo from "../img/SASSSVG.svg";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-
-const skillhover = {
-  hidden: {
-    y: 0,
-    x: -5,
-  },
-  show: {
-    y: 10,
-    x: 0,
-    transition: {
-      yoyo: Infinity,
-    },
-  },
-};
+import { skillhover } from "../Styles/Pageanimation";
 
 function Skill({ color, logo }) {
   // function changeBackgroundon(e) {
@@ -25,10 +12,19 @@ function Skill({ color, logo }) {
   // function changeBackgroundout(e) {
   //   e.target.style.background = "#333";
   // }
+
   const SkilloneStyle = styled(motion.div)`
+    height: 75%;
+    width: 45%;
+
+    @media (max-width: 720px) {
+      height: 75%;
+      width: 80%;
+    }
+
     .card {
-      width: 8rem;
-      height: 12rem;
+      width: 100%;
+      height: 100%;
       background-color: #0f141d;
       border-radius: 10px;
       overflow: hidden;
@@ -48,13 +44,13 @@ function Skill({ color, logo }) {
     }
 
     /* .card:hover {
-      transform: translateY(-5px) scale(1.005) translateZ(0);
-      box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11),
-        0 24px 46px rgba(255, 215, 97, 0.48);
-    } */
+    transform: translateY(-5px) scale(1.005) translateZ(0);
+    box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11),
+      0 24px 46px rgba(255, 215, 97, 0.48);
+  } */
 
     .card:hover .overlay {
-      transform: scale(4) translateZ(0);
+      transform: scale(5) translateZ(0);
       background-color: ${color};
     }
 
@@ -69,15 +65,15 @@ function Skill({ color, logo }) {
     }
 
     .card:active {
-      transform: scale(1.4) translateZ(0);
+      /* transform: scale(1.4) translateZ(0); */
 
       box-shadow: 0 15px 24px rgba(0, 0, 0, 0.11),
         0 15px 24px rgba(255, 215, 97, 0.48);
     }
 
     .circle {
-      width: 6rem;
-      height: 6rem;
+      width: 70%;
+      height: 45%;
       border-radius: 50%;
       background: #fff;
       border: 2px solid ${color};
@@ -87,18 +83,24 @@ function Skill({ color, logo }) {
       position: relative;
       z-index: 1;
       transition: all 0.3s ease-out;
+
+      @media (max-width: 720px) {
+        width: 90%;
+        height: 60%;
+      }
     }
 
     .circle:after {
       content: "";
-      width: 6.4rem;
-      height: 6.4rem;
+      width: 100%;
+      height: 100%;
       display: block;
       position: absolute;
       background: #fff;
       border-radius: 50%;
-      top: -1px;
-      left: -3px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       transition: opacity 0.3s ease-out;
     }
 
@@ -106,21 +108,29 @@ function Skill({ color, logo }) {
       z-index: 10000;
       margin-top: 0.5rem;
       transform: translateZ(0);
-      height: 3.9rem;
+      position: absolute;
+      height: 60%;
+      width: 60%;
     }
 
     .overlay {
-      width: 6.8rem;
-      height: 6.8rem;
+      height: 46%;
+      width: 71%;
       position: absolute;
       border-radius: 50%;
       background-color: ${color};
-      top: 46px;
-      left: 0.73rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       z-index: 0;
       transition: transform 1s ease-out;
+      @media (max-width: 720px) {
+        width: 90%;
+        height: 60%;
+      }
     }
   `;
+
   return (
     <SkilloneStyle
       variants={skillhover}
@@ -128,65 +138,17 @@ function Skill({ color, logo }) {
       //  animate='show'
     >
       <a
-        href='#'
-        class='card education'
+        className='card'
         // onMouseOver={changeBackgroundon}
         // onMouseOut={changeBackgroundout}
       >
-        <div class='overlay'></div>
-        <div class='circle'>
+        <div className='overlay'></div>
+        <div className='circle'>
           <img src={logo} alt='' />
         </div>
       </a>
     </SkilloneStyle>
   );
 }
+
 export default Skill;
-
-/* 
-  .overlay {
-      width: 118px;
-      position: absolute;
-      height: 118px;
-      border-radius: 50%;
-      background: #ffd861;
-      top: 34px;
-      left: 25px;
-      z-index: 0;
-      transition: transform 1s ease-out;
-    } 
-   width: 11rem;
-  border-radius: 11px;
-  background: white;
-  box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
-  .insidediv {
-    padding: 1rem 0rem;
-    display: flex;
-
-    .logo {
-      flex: 1;
-      img {
-        height: 4rem;
-      }
-    }
-  }
-
-  .desc {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    h2 {
-      color: #2e2e2e;
-      font-size: 2rem;
-    }
-  } 
-  */
-
-// function changeBackgroundon(e) {
-//   e.target.style.background = color;
-//   // e.target.style.transform = "scale(4) translateZ(0)";
-// }
-// function changeBackgroundout(e) {
-//   e.target.style.background = "#333";
-// }

@@ -76,6 +76,20 @@ export const slider = {
   },
 };
 
+export const skillhover = {
+  hidden: {
+    y: 0,
+    x: -5,
+  },
+  show: {
+    y: 10,
+    x: 0,
+    transition: {
+      yoyo: Infinity,
+    },
+  },
+};
+
 export const fade = {
   hidden: {
     opacity: 0,
@@ -94,13 +108,13 @@ export const fade = {
 export const contactanimeOne = {
   hidden: {
     opacity: 1,
-    y: -2000,
-    x: 2000,
+
+    x: -2000,
   },
 
   show: {
     opacity: 1,
-    y: 0,
+
     x: 0,
 
     transition: {
@@ -111,12 +125,10 @@ export const contactanimeOne = {
 };
 export const contactanimeTwo = {
   hidden: {
-    y: 2000,
-    x: -2000,
+    x: 2000,
   },
 
   show: {
-    y: 0,
     x: 0,
 
     transition: {

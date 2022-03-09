@@ -21,10 +21,18 @@ function App() {
       <Navbar />
 
       <div className='sections'>
-        <About />
-        <Skills />
-        <Projects />
-        <ContactUs />
+        <div>
+          <About />
+        </div>
+        <div id='skills'>
+          <Skills />
+        </div>
+        <div id='projects'>
+          <Projects />
+        </div>
+        <div id='contact'>
+          <ContactUs />
+        </div>
       </div>
     </div>
   );

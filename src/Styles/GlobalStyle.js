@@ -6,9 +6,10 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        /* font-family: 'Bodoni Moda', serif;
-font-family: 'Dancing Script', cursive;
-font-family: 'Josefin Sans', sans-serif; */
+        
+    }
+    body {
+        font-family: 'DM Sans', sans-serif;
     }
 
     /* button {

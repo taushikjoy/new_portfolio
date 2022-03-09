@@ -36,14 +36,19 @@ export default Projects;
 
 const ProjectsStyle = styled.div`
   background: radial-gradient(ellipse at center, #17202b 30%, #06070a 100%);
-  height: auto;
+  /* height: 100%; */
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  h1 {
+    color: white;
+  }
   /* margin-bottom: 5rem; */
 
   .cards {
+    height: 100%;
     width: 60%;
     display: grid;
     justify-content: center;
@@ -69,5 +74,19 @@ const ProjectsStyle = styled.div`
   }
   .abcd4 {
     grid-column: 1/15;
+  }
+
+  @media (max-width: 720px) {
+    .cards {
+      width: 100%;
+      height: 100%;
+
+      padding: 0;
+    }
+    .abcd {
+      width: 90%;
+      height: auto;
+      margin: 0.5rem auto;
+    }
   }
 `;
