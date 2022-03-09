@@ -36,7 +36,8 @@ export default Projects;
 
 const ProjectsStyle = styled.div`
   background: radial-gradient(ellipse at center, #17202b 30%, #06070a 100%);
-  /* height: 100%; */
+  padding-top: 4 rem;
+
   width: 100vw;
   display: flex;
   flex-direction: column;

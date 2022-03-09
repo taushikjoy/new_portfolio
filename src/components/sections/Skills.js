@@ -64,6 +64,7 @@ const SkillsStyle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 3rem;
   background: radial-gradient(ellipse at center, #131c26 30%, #06070a 100%);
   h1 {
     margin-top: 3rem;

@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
+import emailjs from "@emailjs/browser";
 import {
   contactanimeOne,
   contactanimeTwo,
@@ -8,7 +9,38 @@ import {
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
+const Result = () => {
+  return (
+    <p>
+      {" "}
+      Your Message has been successfully sent . I will reach out to you soon !
+      😃{" "}
+    </p>
+  );
+};
+
 function ContactUs() {
+  //emailjs config
+  const form = useRef();
+
+  const [result, showResult] = useState(false);
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("gmail", "template_8usjwan", e.target, "0VOcSoIhXiwgZC88n")
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+    showResult(true);
+  };
+  //
   const controls = useAnimation();
   const [element, view] = useInView({ threshold: 0.6 });
   if (view) {
@@ -40,10 +72,10 @@ function ContactUs() {
           <h1>Let's talk</h1>
           <p>New projects,freelance inquire or even a coffee</p>
 
-          <form className='the-form' action=''>
+          <form className='the-form' action='' onSubmit={sendEmail}>
             <div className='name-form'>
-              <label htmlFor='name'>Name</label>
-              <input type='text' name='name' />
+              <label htmlFor='fullname'>Name</label>
+              <input type='text' name='fullname' />
             </div>
             <div className='name-form'>
               <label htmlFor='email'>E-mail</label>
@@ -53,8 +85,9 @@ function ContactUs() {
               <label htmlFor='message'>Message</label>
               <textarea name='message' id='' cols='30' rows='5'></textarea>
             </div>
+            <div className='row'>{result ? <Result /> : null}</div>
+            <button>Send message</button>
           </form>
-          <button>Send message</button>
         </motion.div>
       </div>
     </ContactusStyle>
@@ -65,10 +98,10 @@ export default ContactUs;
 
 const ContactusStyle = styled(motion.div)`
   @media (max-width: 720px) {
-    padding: 0;
+    padding: 0.5rem 0;
     height: 100%;
   }
-  
+
   display: flex;
   gap: 0.5rem;
   flex-direction: column;
@@ -77,10 +110,10 @@ const ContactusStyle = styled(motion.div)`
   background: #222222;
   color: #faf7ff;
   height: calc(100vh - 70px);
-  padding: 1rem 0rem 3rem 0rem;
+  padding: 0rem 0rem 3rem 0rem;
 
   h2 {
-    margin: 0.5rem 0.5rem;
+    margin: 1rem 0.5rem;
   }
 
   .innerdiv {
@@ -120,6 +153,11 @@ const ContactusStyle = styled(motion.div)`
         flex-direction: column;
         gap: 2rem;
         margin-top: 2rem;
+
+        button {
+          width: 20%;
+          height: 2rem;
+        }
       }
 
       input,
