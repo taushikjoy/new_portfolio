@@ -18,6 +18,7 @@ import {
   projectimagetwo,
   projectimagethree,
 } from "../../Styles/Pageanimation";
+import Aboutme from "./Aboutme";
 
 function Projectdetail() {
   //
@@ -41,6 +42,8 @@ function Projectdetail() {
   //
   return (
     <>
+      {" "}
+      <Aboutme />
       {project && (
         <ProjectDetailStyle>
           <h1>{project.title}</h1>

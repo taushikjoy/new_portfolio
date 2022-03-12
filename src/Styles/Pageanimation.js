@@ -231,7 +231,7 @@ export const coverimageone = {
 };
 export const coverimagetwo = {
   hidden: {
-    x: 600,
+    x: 700,
   },
 
   show: {
@@ -259,7 +259,7 @@ export const coverimagethree = {
 };
 export const coverimagefour = {
   hidden: {
-    x: 600,
+    x: 750,
   },
 
   show: {

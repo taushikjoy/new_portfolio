@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-//import { Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [showNav, setShowNav] = useState(false);
@@ -17,7 +17,9 @@ function Navbar() {
           <li className='closebtn' onClick={() => setShowNav(!showNav)}>
             <CloseIcon />
           </li>
-          <a>About Me</a>
+          <Link to='/aboutme'>
+            <a>About Me</a>
+          </Link>
           <a href='#skills'>Skills</a>
           <a href='#projects'>Projects</a>
           <a href='#contact'>Contact Me</a>

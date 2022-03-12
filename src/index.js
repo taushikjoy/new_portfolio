@@ -4,6 +4,7 @@ import App from "./App";
 import { GlobalStyle } from "./Styles/GlobalStyle";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Projectdetail from "./components/sections/Projectdetail";
+import Aboutme from "./components/sections/Aboutme";
 
 ReactDOM.render(
   <>
@@ -12,6 +13,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' exact element={<App />} />
+        <Route path='/aboutme' exact element={<Aboutme />} />
         <Route path='/project/:id' element={<Projectdetail />} />
       </Routes>
     </BrowserRouter>

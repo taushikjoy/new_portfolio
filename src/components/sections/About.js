@@ -80,7 +80,7 @@ const AboutStyle = styled.div`
       flex: 1;
     }
     .images {
-      flex: 1;
+      flex: 2;
       display: grid;
       padding: 0.5rem;
       width: 100%;
@@ -88,26 +88,26 @@ const AboutStyle = styled.div`
       grid-template-rows: repeat(20, 1fr);
       margin: auto;
       @media (max-width: 720px) {
-        padding: 0rem;
+        padding-top: 2rem;
       }
       .image1 {
-        grid-column: 4/14;
-        grid-row: 2/7;
+        grid-column: 4/12;
+        grid-row: 1/6;
         width: 100%;
       }
       .image2 {
-        grid-column: 11/20;
-        grid-row: 6/16;
+        grid-column: 11/18;
+        grid-row: 4/15;
         width: 100%;
       }
       .image3 {
-        grid-column: 3/12;
-        grid-row: 9/14;
+        grid-column: 4/12;
+        grid-row: 7/13;
         width: 100%;
       }
       .image4 {
-        grid-column: 10/20;
-        grid-row: 12/18;
+        grid-column: 10/18;
+        grid-row: 11/20;
         width: 100%;
       }
 

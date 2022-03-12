@@ -35,7 +35,7 @@ function Projects() {
 export default Projects;
 
 const ProjectsStyle = styled.div`
-  background: radial-gradient(ellipse at center, #17202b 30%, #06070a 100%);
+  /* background: ; */
   padding-top: 4 rem;
 
   width: 100vw;
