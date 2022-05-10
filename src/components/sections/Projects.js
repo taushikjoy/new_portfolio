@@ -1,32 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import ProjectCard from "../UI/ProjectCard";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import projectCover1 from "../../img/capture.jpg";
-import projectCover2 from "../../img/musiccover.jpg";
-import projectone3 from "../../img/projectone3.jpg";
+
+import { ProjectState } from "../../ProjectState";
 
 function Projects() {
+  const [projectState, setProjectState] = useState(ProjectState);
+  const [singleProject, setSingleProject] = useState(projectState[0]);
   return (
     <ProjectsStyle>
       <h1>Latest Works</h1>
       <div className='cards'>
-        <div className='abcd abcd1'>
-          <Link to='/project/capture'>
-            <ProjectCard coverPhoto={projectCover1} />
-          </Link>
-        </div>
-        <div className='abcd abcd2'>
-          <Link to='/project/racer'>
-            <ProjectCard coverPhoto={projectCover2} />
-          </Link>
-        </div>
-        <div className='abcd abcd3'>
-          <ProjectCard />
-        </div>
-        <div className='abcd abcd4'>
-          <ProjectCard />
-        </div>
+        {projectState.map((proj) => (
+          <div className={proj.class}>
+            <ProjectCard
+              setSingleProject={setSingleProject}
+              proj={proj}
+              key={proj.id}
+            />
+          </div>
+        ))}
       </div>
     </ProjectsStyle>
   );
@@ -35,28 +29,26 @@ function Projects() {
 export default Projects;
 
 const ProjectsStyle = styled.div`
-  /* background: ; */
   padding-top: 4 rem;
 
   width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: auto;
 
   h1 {
     color: white;
   }
-  /* margin-bottom: 5rem; */
 
   .cards {
     height: 100%;
-    width: 60%;
+    width: 100%;
+
     display: grid;
     justify-content: center;
-    gap: 1rem;
-    grid-template-columns: repeat(16, 1fr);
+    align-content: center;
 
-    /* grid-template-rows: repeat(3, 1fr); */
+    grid-template-columns: repeat(12, 1fr);
+
+    grid-template-rows: repeat(3, 1fr);
   }
 
   .abcd {
@@ -64,17 +56,17 @@ const ProjectsStyle = styled.div`
     margin: 3rem;
   }
   .abcd1 {
-    grid-column: 2/16;
+    grid-column: 4/10;
     /* box-shadow: 0 20px 80px 0 rgb(0 0 0 / 45%); */
   }
   .abcd2 {
-    grid-column: 1/15;
+    grid-column: 3/9;
   }
   .abcd3 {
-    grid-column: 2/16;
+    grid-column: 4/10;
   }
   .abcd4 {
-    grid-column: 1/15;
+    grid-column: 3/9;
   }
 
   @media (max-width: 720px) {

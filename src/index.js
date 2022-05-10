@@ -5,6 +5,9 @@ import { GlobalStyle } from "./Styles/GlobalStyle";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Projectdetail from "./components/sections/Projectdetail";
 import Aboutme from "./components/sections/Aboutme";
+import AboutMeSection from "./components/AboutMe/AboutMeSection";
+import EduactionSection from "./components/AboutMe/EduactionSection";
+import WorkSection from "./components/AboutMe/WorkSection";
 
 ReactDOM.render(
   <>
@@ -13,7 +16,11 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' exact element={<App />} />
-        <Route path='/aboutme' exact element={<Aboutme />} />
+        <Route path='/aboutme' exact element={<Aboutme />}>
+          <Route path='' element={<AboutMeSection/>}/>
+          <Route path='edusec' element={<EduactionSection/>}/>
+          <Route path='worksec' element={<WorkSection/>}/>
+        </Route>
         <Route path='/project/:id' element={<Projectdetail />} />
       </Routes>
     </BrowserRouter>

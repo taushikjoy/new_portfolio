@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import testimage from "../../img/the-racer2.jpg";
 import { Link } from "react-router-dom";
+// import testimage from "../../img/the-racer2.jpg";
+// import { Link } from "react-router-dom";
+// import projectState from "../../ProjectState";
 
-function ProjectCard({ coverPhoto }) {
+function ProjectCard({ setSingleProject, proj }) {
+  // const [projectState, setProjectState] = useState(projectState());
+
   const ProjectCardStyle = styled.div`
     @media (max-width: 720px) {
       height: 25vh;
@@ -20,7 +24,7 @@ function ProjectCard({ coverPhoto }) {
 
     width: 100%;
     cursor: pointer;
-    background: url(${coverPhoto});
+    background: url(${proj.coverPhoto});
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -68,7 +72,7 @@ function ProjectCard({ coverPhoto }) {
 
       @media (max-width: 720px) {
         position: absolute;
-        top: 2.2rem;
+        top: 5.2rem;
         left: 1rem;
 
         height: 20%;
@@ -113,9 +117,11 @@ function ProjectCard({ coverPhoto }) {
   return (
     <ProjectCardStyle>
       <div className='descrip'>
-        <h1>Project Name</h1>
-        <p>this a ..... project</p>
-        <button>Case Study</button>
+        <h1>{proj.title}</h1>
+        <p>{proj.desc}</p>
+        <Link to={proj.url}>
+          <button>Case Study</button>
+        </Link>
       </div>
     </ProjectCardStyle>
   );

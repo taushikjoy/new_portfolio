@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import joy from "../../img/dog.jpg";
+
 import cover1 from "../../img/cover1.png";
 import cover2 from "../../img/cover2.jpg";
 import cover3 from "../../img/cover3.jpg";
@@ -27,7 +27,17 @@ function About() {
         <div id='stars2'></div>
         <div id='stars3'></div>
         <div className='title'>
-          <div className='descrip'>hjhbhb</div>
+          <div className='descrip'>
+            <motion.div
+              className='desc'
+              variants={titleAnime}
+              initial='hidden'
+              animate='show'
+            >
+              Hi,I am Joy.
+              <br /> <span>I build and design user interface</span>
+            </motion.div>
+          </div>
           <motion.div
             className='images'
             variants={coverparent}
@@ -78,6 +88,16 @@ const AboutStyle = styled.div`
 
     .descrip {
       flex: 1;
+      margin-top: 15rem;
+      .desc {
+        font-size: 2rem;
+        span {
+          background: -webkit-linear-gradient(45deg, #a8ff78, #78ffd6);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-size: 3rem;
+        }
+      }
     }
     .images {
       flex: 2;

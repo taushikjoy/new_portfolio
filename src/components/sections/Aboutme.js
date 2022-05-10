@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import dog from "../../img/dog.jpg";
 import { AboutMeState } from "../../AboutMeState";
@@ -40,15 +40,9 @@ function Aboutme() {
           </li>
         </ul>
       </div>
-
-      {numofabout && (
-        <div className='container'>
-          <div className='image'>
-            <img src={numofabout.firstImage} alt='jj' />
-          </div>
-          <div className='desc'>{numofabout.desc}</div>
-        </div>
-      )}
+      <div className='container'>
+        <Outlet/>
+      </div>
       {/* <div className='footer'>asd</div> */}
     </AboutMeStyle>
   );

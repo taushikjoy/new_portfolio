@@ -43,7 +43,6 @@ function Projectdetail() {
   return (
     <>
       {" "}
-      <Aboutme />
       {project && (
         <ProjectDetailStyle>
           <h1>{project.title}</h1>
