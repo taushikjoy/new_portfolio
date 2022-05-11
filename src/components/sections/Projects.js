@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ProjectCard from "../UI/ProjectCard";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 import { ProjectState } from "../../ProjectState";
 

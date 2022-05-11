@@ -89,6 +89,7 @@ const AboutStyle = styled.div`
     .descrip {
       flex: 1;
       margin-top: 15rem;
+
       .desc {
         font-size: 2rem;
         span {
@@ -97,6 +98,9 @@ const AboutStyle = styled.div`
           -webkit-text-fill-color: transparent;
           font-size: 3rem;
         }
+      }
+      @media (max-width: 720px) {
+        margin-top: 25%;
       }
     }
     .images {
@@ -135,19 +139,6 @@ const AboutStyle = styled.div`
         width: 100%;
       }
     }
-
-    /* position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    color: #fff;
-    text-align: center;
-    font-family: Lato;
-    font-weight: 300;
-    font-size: 50px;
-    letter-spacing: 10px;
-    margin-top: -60px;
-    padding-left: 10px; */
   }
 
   #title span {

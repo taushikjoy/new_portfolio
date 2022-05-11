@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-// import testimage from "../../img/the-racer2.jpg";
-// import { Link } from "react-router-dom";
-// import projectState from "../../ProjectState";
 
 function ProjectCard({ setSingleProject, proj }) {
-  // const [projectState, setProjectState] = useState(projectState());
-
   const ProjectCardStyle = styled.div`
     @media (max-width: 720px) {
       height: 25vh;
@@ -128,17 +123,3 @@ function ProjectCard({ setSingleProject, proj }) {
 }
 
 export default ProjectCard;
-
-/* .cover:after {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  display: block;
-  content: " ";
-  background: red;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-} */
